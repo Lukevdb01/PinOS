@@ -1,3 +1,4 @@
+@echo off
 mkdir output
 arm-none-eabi-as -o output/bootloader.o src/bootloader.s
 arm-none-eabi-gcc -ffreestanding -nostdlib -c -o output/kernel.o src/kernel/kernel.c
