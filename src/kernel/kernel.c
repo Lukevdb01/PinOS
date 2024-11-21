@@ -14,7 +14,7 @@ void uart_puts(const char *str) {
 }
 
 void kernel_main() {
-    uart_puts("Kernel has started!\n");
+    uart_puts("Kernel has starteds!\n");
 
     // Infinite loop to keep the kernel running
     while (1) {

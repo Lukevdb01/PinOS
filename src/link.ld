@@ -1,26 +1,38 @@
-ENTRY(_kern)
+ENTRY(_start)
 
-MEMORY {
-    TEXT (rx)  : ORIGIN = 0x10000, LENGTH = 0x100000  /* Code section */
-    DATA (rw)  : ORIGIN = 0x200000, LENGTH = 0x100000  /* Data section */
-    BSS  (rw)  : ORIGIN = 0x300000, LENGTH = 0x100000  /* Uninitialized data */
+MEMORY
+{
+    RAM (rwx) : ORIGIN = 0x10000, LENGTH = 0x10000  /* 64KB of RAM */
+    FLASH (rx) : ORIGIN = 0x0, LENGTH = 0x10000    /* 64KB of flash memory */
 }
 
-SECTIONS {
-    . = 0x10000;  /* Start the bootloader at 0x10000 */
+SECTIONS
+{
+    . = 0x0;  /* Start at the beginning of flash */
 
-    /* Code section */
-    .text : {
-        *(.text)
-    } > TEXT
+    /* Bootloader section */
+    .text.bootloader : {
+        *(.text)        /* All the .text sections from bootloader files */
+        *(.data)        /* All the .data sections from bootloader files */
+    } > FLASH
 
-    /* Data section */
-    .data : {
-        *(.data)
-    } > DATA
+    /* Kernel section */
+    .text.kernel : {
+        *(.text)        /* All the .text sections from kernel files */
+        *(.data)        /* All the .data sections from kernel files */
+    } > FLASH
 
-    /* Uninitialized data section */
+    /* BSS (uninitialized data) section */
     .bss : {
         *(.bss)
-    } > BSS
+        *(.bss.*)
+    } > RAM
+
+    /* Stack section */
+    .stack : {
+        . = ALIGN(8);
+        stack_start = .;
+        . += 0x2000;  /* 8KB stack size */
+        stack_end = .;
+    } > RAM
 }
