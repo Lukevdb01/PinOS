@@ -1,4 +1,4 @@
-ENTRY(_start)
+ENTRY(_kern)
 
 MEMORY {
     TEXT (rx)  : ORIGIN = 0x10000, LENGTH = 0x100000  /* Code section */
