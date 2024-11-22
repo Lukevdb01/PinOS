@@ -1,10 +1,14 @@
 #include <stdint.h>
 
+// stdlib
+#include "include/string.h"
+
 #define UART0_BASE 0x101f1000
 #define UART0_DR   *((volatile uint32_t *)(UART0_BASE + 0x00))
 
 void uart_putc(char c) {
-    UART0_DR = c;  // Write the character to the UART data register
+    while ((UART0_DR & (1 << 5)) == 0);
+    UART0_DR = c;
 }
 
 void uart_puts(const char *str) {
@@ -13,16 +17,14 @@ void uart_puts(const char *str) {
     }
 }
 
-void kernel_main() {
-    uart_puts("Welcome to PinOS kernel!\n");
+void kernel_main() { 
+    char msg[] = "welcome to PinOS!";
+    char buffer[100];
+    string_concat(buffer, "Hello, and ", msg);
 
-    // Infinite loop to keep the kernel running
-    while (1) {
-        // Add additional kernel logic here
-    }
+    while (1) {}
 }
 
-// Entry point for the kernel (called from bootloader)
 void _kern() {
-    kernel_main();  // Start kernel execution
+    kernel_main(); 
 }
