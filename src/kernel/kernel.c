@@ -1,30 +1,27 @@
 #include <stdint.h>
 
 // stdlib
-#include "include/string.h"
+#include "include/uart.h"
 
-#define UART0_BASE 0x101f1000
-#define UART0_DR   *((volatile uint32_t *)(UART0_BASE + 0x00))
+void kernel_main()
+{
+    uart_puts("Welcome to PinOS!\n");
 
-void uart_putc(char c) {
-    while ((UART0_DR & (1 << 5)) == 0);
-    UART0_DR = c;
-}
-
-void uart_puts(const char *str) {
-    while (*str) {
-        uart_putc(*str++);
+    while (true)
+    {
+        bool state = true;
+        if (state)
+        {
+            uart_puts("Condition met: Kernel is operating normally.\n");
+        }
+        else
+        {
+            uart_puts("Condition not met: Please check the system.\n");
+        }
     }
 }
 
-void kernel_main() { 
-    char msg[] = "welcome to PinOS!";
-    char buffer[100];
-    string_concat(buffer, "Hello, and ", msg);
-
-    while (1) {}
-}
-
-void _kern() {
-    kernel_main(); 
+void _kern()
+{
+    kernel_main();
 }
