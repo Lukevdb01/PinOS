@@ -11,8 +11,8 @@ The target hardware for this OS is the [RP2040 Pi Zero](https://www.waveshare.co
 ## Roadmap
 
 ### **Phase 1: Core Kernel Development**
-- [ ] Set up a basic bootloader for the RP2040.  
-- [ ] Implement kernel initialization routines (C/Assembly).  
+- [x] Set up a basic bootloader for the RP2040.  
+- [x] Implement kernel initialization routines (C/Assembly).  
 - [ ] Create a memory management system:
   - Stack and heap management.  
   - Basic dynamic memory allocation.  
