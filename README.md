@@ -54,6 +54,6 @@ The target hardware for this OS is the [RP2040 Pi Zero](https://www.waveshare.co
 ## Libraries I Plan to Use
 
 - [LVGL Graphical User Interface](https://lvgl.io/)  
-- TBD: [Pico SDK](https://github.com/raspberrypi/pico-sdk)  
+- [Pico SDK](https://github.com/raspberrypi/pico-sdk)  
 
 Stay tuned for updates!
