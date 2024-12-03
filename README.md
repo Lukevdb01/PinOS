@@ -1,7 +1,3 @@
-Here's the updated **README.md** reflecting the new direction for **PinOS**:
-
----
-
 # PinOS - ARM (32-bit)
 
 **PinOS** is a personal hobby project to explore operating system development using C and assembly. The ultimate goal of PinOS is to manage a custom-built 3D printer while serving as a fully functional desktop system. The OS will host a Vue-based web control panel, provide GPIO pin access, support slicing 3D models into G-code, and manage communication with Arduino boards responsible for the printer's operation.  
