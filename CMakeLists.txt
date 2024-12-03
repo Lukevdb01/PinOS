@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(PinOS kernel/main.cpp )
+add_executable(PinOS src/kernel/kernel.cpp )
 
 pico_set_program_name(PinOS "PinOS")
 pico_set_program_version(PinOS "0.1")

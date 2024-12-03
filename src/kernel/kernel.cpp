@@ -1,5 +1,4 @@
-#include "pico/stdlib.h"
-#include "stdio.h"
+#include "include/kernel.h"
 
 int main() {
     stdio_init_all();
