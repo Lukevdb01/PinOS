@@ -5,7 +5,7 @@
 Designed for embedded environments, PinOS is tailored for the **RP2040 Pi Zero**, with these specifications:  
 
 - **Processor**: Dual-core ARM Cortex-M0+ @ 133 MHz  
-- **Memory**: 264 KB of SRAM + 8 MB of PSRAM  
+- **Memory**: 264 KB of SRAM
 - **Storage**: 16 MB onboard flash  
 
 ## Roadmap
