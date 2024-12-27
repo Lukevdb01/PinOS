@@ -11,7 +11,6 @@ Designed for embedded environments, PinOS is tailored for the **RP2040 Pi Zero**
 ## Roadmap
 
 ### Phase 1: Core Kernel Development
-- [x] **Bootloader**: (done by the Pico extension in vscode).  
 - [ ] **Kernel Initialization**: Implement startup routines using C and assembly.  
 - **Memory Management**:  
   - [ ] Set up stack and heap management.  
@@ -21,15 +20,13 @@ Designed for embedded environments, PinOS is tailored for the **RP2040 Pi Zero**
   - [ ] Develop a round-robin scheduler for cooperative multitasking.  
 
 ### Phase 2: Hardware Abstraction Layer (HAL)
-- [ ] **GPIO Control**: Implement a flexible GPIO abstraction layer.  
-- [ ] **UART Debugging**: Set up UART for logging and communication.  
 - **Peripheral Communication**:  
   - [ ] Add SPI/I2C support for interfacing with external hardware.  
   - [ ] Enable control of Arduino boards for 3D printer components.  
 
 ### Phase 3: Filesystem and Storage
 - **Filesystem**:  
-  - [ ] Develop a lightweight filesystem for onboard flash.  
+  - [ ] Develop a lightweight (maybe FAT32) filesystem for onboard flash.  
   - [ ] Enable file operations for G-code and configuration files.  
 - [ ] **External Storage**: Plan for optional external storage support via SD card.  
 
@@ -37,8 +34,7 @@ Designed for embedded environments, PinOS is tailored for the **RP2040 Pi Zero**
 - **Networking Stack**:  
   - [ ] Implement a TCP/IP stack for Ethernet or Wi-Fi modules.  
 - **Web Server**:  
-  - [ ] Create a lightweight HTTP server to host a Vue-based control panel.  
-  - [ ] Add authentication and basic security measures.  
+  - [ ] Create a lightweight HTTP server to host a Vue-based control panel.   
 
 ### Phase 5: 3D Printer Integration
 - **G-code Handling**:  
@@ -54,10 +50,7 @@ Designed for embedded environments, PinOS is tailored for the **RP2040 Pi Zero**
 
 ### Phase 7: Testing and Optimization
 - [ ] **Stability Testing**: Stress-test multitasking and I/O operations.  
-- [ ] **Performance Tuning**: Optimize the system for minimal power and memory usage.  
-- [ ] **Documentation**: Write comprehensive guides for developers and users.  
+- [ ] **Performance Tuning**: Optimize the system for minimal power and memory usage.   
 
 ## Libraries and Tools
 - **LVGL**: For building the graphical user interface.  
-
-Stay tuned for updates on the progress of PinOS!  
