@@ -53,4 +53,6 @@ Designed for embedded environments, PinOS is tailored for the **RP2040 Pi Zero**
 - [ ] **Performance Tuning**: Optimize the system for minimal power and memory usage.   
 
 ## Libraries and Tools
-- **LVGL**: For building the graphical user interface.  
+- **LVGL**: For building the graphical user interface.
+
+#### © copyright 2024 - 2025 | Luke van den Broek
